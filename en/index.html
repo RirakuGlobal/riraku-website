@@ -23,7 +23,7 @@ nav a{margin-left:20px;text-decoration:none;font-size:15px;color:var(--ink)}
 nav a:hover{color:var(--gold);text-decoration:underline}
 .hero{background:linear-gradient(160deg,#fff3dc,#fbe3c2);color:var(--ink);padding:96px 24px 88px}
 .hero>div{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}.hero img{width:100%;max-width:240px;justify-self:center;display:block;border-radius:20px;box-shadow:0 10px 30px rgba(60,30,10,.25)}
-.hero h1{font-size:clamp(28px,5vw,48px);line-height:1.2;margin:0 0 24px;font-weight:900}
+.hero h1{font-size:clamp(22px,2.8vw,34px);line-height:1.2;margin:0 0 24px;font-weight:900}
 .hero p{max-width:34em;font-size:18px;margin:0 0 32px;color:#5a4132}
 .btn{display:inline-block;background:var(--grad);color:#fff;font-weight:700;padding:14px 32px;text-decoration:none;border-radius:4px}
 .btn:hover{filter:brightness(1.08)}
@@ -52,6 +52,8 @@ footer{background:var(--ink);color:#e8d9c0;text-align:center;padding:28px 24px;f
 @media (max-width:760px){.hero>div{grid-template-columns:1fr}.hero img{max-width:240px;order:-1}}@media (max-width:600px){nav a{margin:0 14px 0 0}.lang{margin:0}th{width:8em}}
 @media (max-width:600px){.bar{position:relative;padding:10px 16px;gap:6px}.lang{position:absolute;top:10px;right:16px;margin:0}nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 10px;width:100%}nav a{margin:0;padding:6px 0;font-size:13px;white-space:nowrap}.logo{font-size:17px}[id]{scroll-margin-top:92px}}
 @media (max-width:380px){nav a{font-size:12px}}
+.hero h1 span{display:block;text-wrap:balance}
+@media (max-width:760px){.hero h1{font-size:clamp(22px,6vw,32px)}}
 </style>
 </head>
 <body>
@@ -80,7 +82,7 @@ footer{background:var(--ink);color:#e8d9c0;text-align:center;padding:28px 24px;f
   <div class="hero">
     <div>
       <div>
-      <h1>The character of Japan's regions. Truly delicious food. Delivered to the ends of the world.</h1>
+      <h1><span>The character of Japan's regions.</span> <span>Truly delicious food.</span> <span>Delivered to the ends of the world.</span></h1>
       <p>Riraku Co., Ltd. is a Tokyo-based trading company that brings Japanese food products to Asia, East Africa and North America. We handle both exports and imports, connecting producers with the people who enjoy their food.</p>
       <a class="btn" href="#contact">Talk to us about trade</a>
       </div>
