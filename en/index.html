@@ -71,6 +71,15 @@ footer{background:var(--ink);color:#e8d9c0;text-align:center;padding:28px 24px;f
 .legend i{display:inline-block;width:34px;height:0;border-top:3px dashed #b83222;vertical-align:middle;margin-right:8px}
 .legend i.im{border-top:3px solid #1f6f5c}
 @media (max-width:600px){.map figcaption{padding:16px 16px 0}.map strong{font-size:17px}.map .lb text{font-size:34px;stroke-width:7px}.map .lb .pin{font-size:36px}.legend{padding:0 16px 14px}}
+.cf{display:grid;gap:18px;max-width:640px;margin:0 0 20px}
+.cf label{display:grid;gap:6px;font-weight:700;font-size:15px}
+.cf em{font-style:normal;font-size:12px;color:#fff;background:var(--teal);border-radius:3px;padding:1px 6px;margin-left:6px;font-weight:400}
+.cf input,.cf textarea{font:inherit;font-weight:400;font-size:16px;padding:12px 14px;border:1px solid #d9c4a0;border-radius:6px;background:#fff;color:var(--ink);width:100%}
+.cf textarea{resize:vertical}
+.cf .btn{border:0;cursor:pointer;font:inherit;font-weight:700;justify-self:start}
+.hp{position:absolute;left:-9999px;height:0;width:0;opacity:0}
+.note{font-size:14px;margin:0}
+.sent{background:#e9f4ee;border:1px solid #1f6f5c;color:#134a3c;border-radius:6px;padding:14px 18px;font-weight:700;max-width:640px}
 </style>
 </head>
 <body>
@@ -179,12 +188,26 @@ footer{background:var(--ink);color:#e8d9c0;text-align:center;padding:28px 24px;f
     <div>
       <h2>Contact</h2>
       <p>Whether you want to introduce a product or discuss trade terms, please get in touch.</p>
-      <p><a class="btn" href="mailto:info@japan-sweet.com">Email info@japan-sweet.com</a></p>
+      <p id="sent" class="sent" role="status" hidden>Thank you for your message. We will review it and get back to you.</p>
+      <form id="cf" class="cf" action="https://formsubmit.co/info@japan-sweet.com" method="POST">
+        <input type="hidden" name="_subject" value="Riraku Co., Ltd. website inquiry">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" id="nx" value="">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label><span>Name <em>Required</em></span><input type="text" name="Name" autocomplete="name" required></label>
+        <label><span>Email <em>Required</em></span><input type="email" name="email" autocomplete="email" required></label>
+        <label><span>Subject <em>Required</em></span><input type="text" name="Subject" required></label>
+        <label><span>Address</span><input type="text" name="Address" autocomplete="street-address"></label>
+        <label><span>Message <em>Required</em></span><textarea name="Message" rows="6" required></textarea></label>
+        <button class="btn" type="submit">Send</button>
+      </form>
+      <p class="note">The information you enter is used only to respond to your inquiry.<br>You can also email us directly at info@japan-sweet.com.</p>
     </div>
   </section>
 </main>
 
 <footer>&copy; 2026 Riraku Co., Ltd. All rights reserved.</footer>
 <script>document.addEventListener("click",function(e){var d=document.querySelector("details.lang");if(d&&!d.contains(e.target))d.removeAttribute("open")});document.addEventListener("keydown",function(e){if(e.key==="Escape"){var d=document.querySelector("details.lang");if(d)d.removeAttribute("open")}});</script>
+<script>(function(){var n=document.getElementById("nx");if(n)n.value=location.origin+location.pathname+"?sent=1#contact";if(/[?&]sent=1/.test(location.search)){var s=document.getElementById("sent");if(s)s.hidden=false}})();</script>
 </body>
 </html>
